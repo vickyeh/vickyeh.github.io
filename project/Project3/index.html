@@ -101,41 +101,41 @@
 Distributed Deep Learning Framework for Brain Tumor Classification
 </h1>
           <div class="site-project-single-description">
-<p><strong>Purpose</strong></p>
-<p>Brain tumors demand early detection for effective treatment, but relying on manual diagnosis via MRI scans is time-consuming and prone to error. The need to effectively and accurately identify brain tumors from Magnetic Resonance Imaging (MRI) images is paramount for patient care and survival rates. Therefore, we leverage recent advancements in medical imaging, particularly deep learning, to assess the effectiveness of previously trained Convolutional Neural Network (CNN) and Vision Transformers (ViT) models in accurately identifying and classifying brain tumors. Our goal is to determine suitable algorithms for this critical diagnostic task.</p>
-<p><strong>Dataset</strong></p>
-<p>The primary dataset for this project is the ReMIND dataset provided by the National Institutes of Health (NIH). This dataset comprises 85,057 high-resolution brain MRIs from 114 subjects featuring various types of brain tumors, providing a rich source for training deep learning models to recognize and classify tumor margins and characteristics. For each patient, we have preoperative MRI sequences: native T1-weighted (T1), contrast-enhanced T1-weighted (ceT1), native T2-weighted (T2), and T2-weighted fluid-attenuated inversion recovery (T2-FLAIR).</p>
-<p>We have completed several pre-processing steps, such as balancing the number of samples for each tumor category and applying normalization and standardization to improve the model training process.</p>
+<p style="font-size:25px; color:#7B7B7B";><strong>Purpose</strong></p>
+<p style="font-size:22px; color:#7B7B7B";>Brain tumors demand early detection for effective treatment, but relying on manual diagnosis via MRI scans is time-consuming and prone to error. The need to effectively and accurately identify brain tumors from Magnetic Resonance Imaging (MRI) images is paramount for patient care and survival rates. Therefore, we leverage recent advancements in medical imaging, particularly deep learning, to assess the effectiveness of previously trained Convolutional Neural Network (CNN) and Vision Transformers (ViT) models in accurately identifying and classifying brain tumors. Our goal is to determine suitable algorithms for this critical diagnostic task.</p>
+<p style="font-size:25px; color:#7B7B7B";><strong>Dataset</strong></p>
+<p style="font-size:22px; color:#7B7B7B";>The primary dataset for this project is the ReMIND dataset provided by the National Institutes of Health (NIH). This dataset comprises 85,057 high-resolution brain MRIs from 114 subjects featuring various types of brain tumors.</p>
+<p style="font-size:22px; color:#7B7B7B";>We have completed several pre-processing steps, such as balancing the number of samples for each tumor category and applying normalization and standardization to improve the model training process.</p>
 
 <img src="https://vickyeh.github.io/images/projects/project3-1.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
 <br>
-<p><strong>Methods</strong></p>
-<p>In our project, we utilized a variety of pre-trained models, including VGG19, InceptionV3, DenseNet121, Xception, ResNet50, and the Vision Transformer (ViT), to classify four distinct brain tumor types: Astrocytoma, Glioblastoma, Oligodendroglioma, and Abnormality.
+<p style="font-size:25px; color:#7B7B7B";><strong>Methods</strong></p>
+<p style="font-size:22px; color:#7B7B7B";>In our project, we utilized 6 pre-trained models, including VGG19, InceptionV3, DenseNet121, Xception, ResNet50, and the Vision Transformer (ViT), to classify four distinct brain tumor types: Astrocytoma, Glioblastoma, Oligodendroglioma, and Abnormality.
 </p>
-<p>
+<p style="font-size:22px; color:#7B7B7B";>
 We implemented transfer learning by freezing the early layers of the CNN models and fine-tuning the later layers. A GlobalAveragePooling2D layer and a Dense layer were added to adapt the models for four-class classification. For ViT, we used a pre-trained model from Hugging Face with a 4-class MLP classification head.</p>
 
-<p><strong>Results</strong></p>
-<p>After comparing the performance of all the models, we found that ResNet50 demonstrated the strongest performance across all metrics, closely trailed by VGG19 with around half of ResNet50’s training time. With the highest F2 Scores, ResNet50 performed best at lowering false negatives. DenseNet121 and Xception displayed moderate performance, while InceptionV3 and ViT, with the latter having a longer training time, showcased comparatively lower scores across the metrics.
+<p style="font-size:25px; color:#7B7B7B";><strong>Results</strong></p>
+<p style="font-size:22px; color:#7B7B7B";>After comparing the performance of all the models, we found that ResNet50 demonstrated the strongest performance across all metrics, closely trailed by VGG19 with around half of ResNet50’s training time. With the highest F2 Scores, ResNet50 performed best at lowering false negatives. DenseNet121 and Xception displayed moderate performance, while InceptionV3 and ViT, with the latter having a longer training time, showcased comparatively lower scores across the metrics.
 
 <img src="https://vickyeh.github.io/images/projects/project3-2.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
 
-<p>Training and validation accuracy curves for each model reveal consistently high accuracy for VGG19 and ResNet50, whereas the accuracy of other models diverges as number of epochs increase.</p>
+<p style="font-size:22px; color:#7B7B7B";>Training and validation accuracy curves for each model reveal consistently high accuracy for VGG19 and ResNet50, whereas the accuracy of other models diverges as number of epochs increase.</p>
 
 <img src="https://vickyeh.github.io/images/projects/project3-3.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
 <br>
-<p> As for loss curve, DenseNet121, and Xception exhibit significant overfitting with validation loss diverging upward, while InceptionV3 and VGG19 show mild overfitting. ResNet50 performs the best, while ViT demonstrates the poorest performance.
+<p style="font-size:22px; color:#7B7B7B";> As for loss curve, DenseNet121, and Xception exhibit significant overfitting with validation loss diverging upward, while InceptionV3 and VGG19 show mild overfitting. ResNet50 performs the best, while ViT demonstrates the poorest performance.
 </p>
 
 <img src="https://vickyeh.github.io/images/projects/project3-4.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
 <br>
-<p> For the ROC-AUC curve, VGG19 achieves the highest AUC score at 0.99, followed by DenseNet121 and Xception at 0.98, ResNet50 at 0.97, ViT at 0.80, and InceptionV3 with the lowest score at 0.73.
+<p style="font-size:22px; color:#7B7B7B";> For the ROC-AUC curve, VGG19 achieves the highest AUC score at 0.99, followed by DenseNet121 and Xception at 0.98, ResNet50 at 0.97, ViT at 0.80, and InceptionV3 with the lowest score at 0.73.
 </p>
 
 <img src="https://vickyeh.github.io/images/projects/project3-5.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
 <br>
-<p><strong>Conclusion</strong></p>
-<p>This study has effectively demonstrated the application of deep learning models, particularly pre- trained Convolutional Neural Networks and a Vision Transformer, for the multi-class classification of brain tumors using MRI images. Our experiments reveal that models like VGG19 and ResNet50 offer robust performance and high accuracy, proving to be valuable in the medical imaging domain. Despite facing challenges such as limited computational resources which particularly affected the Vision Transformer’s performance, our findings are promising. Overall, we anticipate our findings to contribute to brain tumor diagnostics, providing rapid, accurate insights that can assist healthcare professionals and inform treatment decisions, ultimately leading to better patient outcomes.</p>
+<p style="font-size:25px; color:#7B7B7B";><strong>Conclusion</strong></p>
+<p style="font-size:22px; color:#7B7B7B";>This study has effectively demonstrated the application of deep learning models, particularly pre- trained Convolutional Neural Networks and a Vision Transformer, for the multi-class classification of brain tumors using MRI images. Our experiments reveal that models like VGG19 and ResNet50 offer robust performance and high accuracy, proving to be valuable in the medical imaging domain. Despite facing challenges such as limited computational resources which particularly affected the Vision Transformer’s performance, our findings are promising. Overall, we anticipate our findings to contribute to brain tumor diagnostics, providing rapid, accurate insights that can assist healthcare professionals and inform treatment decisions, ultimately leading to better patient outcomes.</p>
           </div>
             
           
