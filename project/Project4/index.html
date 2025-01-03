@@ -133,15 +133,16 @@ For explainability, Grad-CAM highlighted critical image regions influencing pred
 <div class="site-project-single-description">
            <p style="font-size:25px; color:#7B7B7B;"><strong>Methods</strong></p>
 <p style="font-size:22px; color:#7B7B7B;">
-For the model trained on the CheXpert dataset, we applied two different datasets for testing, as shown in Figure 1. Although the AUC values for the six common classes vary, the mean AUC across these classes remains similar. Interestingly, the external dataset testing even yields a slightly better AUC. It represents that this model shows a good generalization because it can be apply on different dataset without decreased AUC.
+For the model trained on the CheXpert dataset, we applied two different datasets for testing. Interestingly, the external dataset testing even yields a slightly better AUC. It represents that this model shows a good generalization because it can be apply on different dataset without decreased AUC.
 
 <img src="https://vickyeh.github.io/images/projects/project4-1.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
           
-<p style="font-size:22px; color:#7B7B7B";>For the model trained on the NIH dataset, we also used two dataset for internal and external testing, as shown in Figure 2. For external testing, the AUC decreases across all classes, and the mean AUC drops significantly from 0.80 to 0.68. Although the NIH model shows relatively better internal testing performance, its poor external performance suggests potential overfitting or the model relying on incorrect shortcuts during learning. Given that NIH has a larger dataset, these results also indicate that a larger dataset does not always guarantee better performance.
+<p style="font-size:22px; color:#7B7B7B";>For the model trained on the NIH dataset, we also used two dataset for internal and external testing. For external testing, the AUC decreases across all classes, and the mean AUC drops significantly from 0.80 to 0.68. Although the NIH model shows relatively better internal testing performance, its poor external performance suggests potential overfitting or the model relying on incorrect shortcuts during learning. Given that NIH has a larger dataset, these results also indicate that a larger dataset does not always guarantee better performance.
 
 <img src="https://vickyeh.github.io/images/projects/project4-2.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
-          
-
+<p style="font-size:22px; color:#7B7B7B;">          
+We utilized Grad-CAM to assess the performance of the CheXpert model at different training checkpoints, specifically focusing on the Enlarged Cardiomediastinum category. Over the training, we observed that the model’s attention gradually became more focused on the relevant regions associated with this condition. In the earlier epochs, the highlighted areas were less localized, but as training progressed, the Grad-CAM visualizations showed a clear improvement, with the model increasingly focusing on the heart region, which is central to diagnosing Enlarged Cardiomediastinum.<br><br>
+By Epoch 30, the model successfully identified the heart area as the key feature for prediction, which aligned with the true label for the condition. Concurrently, we saw a decrease in the predicted probability, making it closer to the actual label of 0, further suggesting that the model’s confidence was aligning with the true diagnosis.</p>
 <div class="site-project-single-action">
             <a href="https://vickyeh.github.io/project/Project1/">
               <span class="link-area">
