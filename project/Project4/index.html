@@ -122,15 +122,27 @@ The ChestX-ray8 dataset (NIH Chest X-ray) includes 108,948 radiographs from 32,7
 
 </div>
 <div class="site-project-single-description">
-           <p style="font-size:25px; color:#7B7B7B;"><strong>Dataset</strong></p>
+           <p style="font-size:25px; color:#7B7B7B;"><strong>Methods</strong></p>
 <p style="font-size:22px; color:#7B7B7B;">
 We used DenseNet-121, a pretrained model fine-tuned for chest radiograph classification, outputting 14 binary labels for conditions like edema. Training spanned 10–30 epochs with a batch size of 64, using binary cross-entropy and the Adam optimizer (learning rate: 0.0001). Input images were resized for compatibility.
-
+<br><br>
 To evaluate generalization, we trained and tested the model on combinations of the CheXpert and NIH datasets, assessing performance across internal and external data.
 
 For explainability, Grad-CAM highlighted critical image regions influencing predictions, while DeepSHAP was applied to logits using 100 balanced background images to identify key features contributing to model decisions.</p>            
-          </div>
-          <div class="site-project-single-action">
+           </div>
+<div class="site-project-single-description">
+           <p style="font-size:25px; color:#7B7B7B;"><strong>Methods</strong></p>
+<p style="font-size:22px; color:#7B7B7B;">
+For the model trained on the CheXpert dataset, we applied two different datasets for testing, as shown in Figure 1. Although the AUC values for the six common classes vary, the mean AUC across these classes remains similar. Interestingly, the external dataset testing even yields a slightly better AUC. It represents that this model shows a good generalization because it can be apply on different dataset without decreased AUC.
+
+<img src="https://vickyeh.github.io/images/projects/project4-1.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
+          
+<p style="font-size:22px; color:#7B7B7B";>For the model trained on the NIH dataset, we also used two dataset for internal and external testing, as shown in Figure 2. For external testing, the AUC decreases across all classes, and the mean AUC drops significantly from 0.80 to 0.68. Although the NIH model shows relatively better internal testing performance, its poor external performance suggests potential overfitting or the model relying on incorrect shortcuts during learning. Given that NIH has a larger dataset, these results also indicate that a larger dataset does not always guarantee better performance.
+
+<img src="https://vickyeh.github.io/images/projects/project4-2.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
+          
+
+<div class="site-project-single-action">
             <a href="https://vickyeh.github.io/project/Project1/">
               <span class="link-area">
                 <span data-text="Next Project">
