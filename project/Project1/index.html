@@ -119,8 +119,9 @@ For the 1D ECG signal data, I applied two types of models for prediction. The fi
 <p style="font-size:22px; color:#7B7B7B;">To better understand the extracted features, we analyzed how they relate to key ECG measurements such as the PR interval, QRS complex, and QT interval. These intervals were automatically computed using NeuroKit2, a Python package for biosignal analysis. We visualized the correlations in a heatmap. Among the 10 selected features, we found that feature 6 was most associated with the PR interval, feature 7 with the QRS complex, and both features 1 and 7 with the QT interval. These results suggest that the VAE-learned features capture physiologically meaningful patterns in ECG signals.
 </p>
 <img src="https://vickyeh.github.io/images/projects/project1-4.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
-
-
+<p style="font-size:22px; color:#7B7B7B;">For the group with the highest correlation, which is between Feature 7 and the QRS complex, ECG measurements were quantified, and the actual reconstruction results with varying offsets were plotted below. This visualization allowed for the observation of subtle changes in the median beat during latent traversal. These results indicated that Feature 7 played a key role in modulating the timing and shape of the QRS complex, potentially encoding important structural characteristics.
+</p>
+<img src="https://vickyeh.github.io/images/projects/project1-5.jpg" alt="project image" style="display: block; margin: 0 auto; width: 500px;">
 
  </div>
             
